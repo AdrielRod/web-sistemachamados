@@ -9,7 +9,7 @@ export default function SignIn() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const {signIn} = useContext(AuthContext)
+    const {signIn, loadingAuth} = useContext(AuthContext)
 
     function handleSubmit(e){
         e.preventDefault()
@@ -20,7 +20,7 @@ export default function SignIn() {
     }
 
     return(
-        <div className='container'>
+        <div className='containe'>
             <div className='login'>
                 <div className='login-area'>
                     <img src={logo} alt="Logo do sistema de chamados"/>
@@ -41,7 +41,9 @@ export default function SignIn() {
                         onChange={(e) => setPassword(e.target.value)}
                     />
 
-                    <button type='submit'>Acessar</button>
+                    <button type='submit'>
+                        {loadingAuth ? "Carregando" : "Entrar"}
+                    </button>
                 </form>
 
                 <Link to="/register">
