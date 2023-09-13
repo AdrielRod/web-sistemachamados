@@ -56,6 +56,12 @@
     cursor: not-allowed;
 }
 
+.avatarUser{
+    width: 250px;
+    height: 250px;
+    border-radius: 125px;
+}
+
 .form-profile button{
     max-width: 600px;
 }

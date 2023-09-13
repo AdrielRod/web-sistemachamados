@@ -99,6 +99,8 @@ function AuthProvider({ children }){
     .catch((error) => {
       console.log(error);
       setLoadingAuth(false);
+      console.log(email, name, password)
+      toast.error("Ops algo deu errado!");
     })
 
   }
@@ -119,11 +121,14 @@ function AuthProvider({ children }){
       value={{
         signed: !!user,
         user,
+        setUser,
         signIn,
         signUp,
         logout,
         loadingAuth,
-        loading
+        loading,
+        storageUser,
+        logout,
       }}
     >
       {children}
